@@ -13,8 +13,8 @@ body {
 #calc-container {
     background-color: #F4AF1B;
     margin: 52px;
-    width: 23vmax;
-    height: 60vmin; 
+    width: 425px;
+    height: 700px; 
     color: #F2BC94;
     /* padding:1vw; */
     margin: 0;
@@ -65,6 +65,10 @@ body header {
     font-size: calc(3vw + 3vh);
 }
 
+#calc-view p {
+    margin: 0;
+}
+
 
 .single-btn, .double-btn{
     width: 25%;
@@ -95,6 +99,7 @@ body header {
     justify-content: center;
 
 }
+
 
 .inner-btn2 {
     border-radius: 40%;    

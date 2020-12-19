@@ -18,7 +18,7 @@ body {
     color: #F2BC94;
     /* padding:1vw; */
     margin: 0;
-    margin-top: 120px;
+    margin-top: 100px;
     padding: 0;
     border: solid #00154F;
     
@@ -103,4 +103,16 @@ body header {
 
 .inner-btn2 {
     border-radius: 40%;    
+}
+
+header {
+    font-size: 15px;
+}
+
+header h1 {    
+    padding-left: 15px;   
+}
+
+footer {
+    margin-top: 10px ;
 }

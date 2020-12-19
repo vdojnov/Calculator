@@ -3,11 +3,11 @@ let firstNum = null;
 let secondNum = null;
 let operation = null;
 
-// TAGS
+// HTML TAGS
 const calcView = document.querySelector("#calc-view");
 const nums = document.querySelectorAll(".num")
 const funcs = document.querySelectorAll(".func")
-const view = document.querySelector('#calc-view')
+const view = document.querySelector('#calc-view p')
 const calcs = document.querySelectorAll(".calc")
 
 // FUNCTIONS
@@ -45,11 +45,18 @@ const addNumber = function() {
     if (view.textContent.includes(".") & this.textContent==="."){
         // DO NOTHING
     } else{
-        if (view.textContent==="0"){
-            view.textContent = this.textContent;
-        } else {
-            view.textContent += this.textContent;
-        }        
+        let oneChar = view.offsetWidth/view.textContent.length;
+        if (!oneChar) {
+            oneChar = 0;
+        }
+        if (calcView.offsetWidth - view.offsetWidth -20 > oneChar) {
+            if (view.textContent==="0"){
+                view.textContent = this.textContent;
+            } else {
+                view.textContent += this.textContent;
+            }   
+            console.log(view.offsetWidth)    
+        } 
     }
 }
 
@@ -102,8 +109,17 @@ const handleFuncs = function() {
             }
             break;
         case "=":
-            secondNum = +view.textContent 
+            secondNum = +view.textContent
             view.textContent = operate(firstNum, operation, secondNum);
+            let i=0;
+            while (view.offsetWidth > calcView.offsetWidth - 50) {
+                view.textContent = view.textContent.slice(0, view.textContent.length - 1);
+                i++;
+            }
+            if (i>0) {
+                i +=2;
+                view.textContent = view.textContent.slice(0, view.textContent.length - 2) + "e" + i;
+            }
             firstNum = null;
             secondNum = null;    
             operation = null;
@@ -127,5 +143,6 @@ nums.forEach(element => {
 funcs.forEach(element => {
     element.addEventListener("click", handleFuncs);
 })
+
 
 

@@ -24,16 +24,11 @@ const multiply = function(a,b) {
 }
 
 const divide = function(a,b) {
-    return a / b;
+    return b !==0 ? a / b: "Yikes";
 }
 
-const operate = function(a,func,b) {
-    if (func===subtract & b === 0) {
-        return "yikes"
-    } else {
-        return func(a,b);
-    }
-    
+const operate = function(a,func,b) {    
+    return func(a,b);      
 }
 
 function updateDisplayString(letter) {

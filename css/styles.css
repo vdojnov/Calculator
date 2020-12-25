@@ -116,3 +116,7 @@ header h1 {
 footer {
     margin-top: 10px ;
 }
+
+footer h3 {
+    margin-bottom: 0;
+}
